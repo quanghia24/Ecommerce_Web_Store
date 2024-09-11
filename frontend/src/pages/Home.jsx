@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Note from "../components/Note"
 import api from "../api"
 import "../styles/Home.css"
+import Navbar from "../components/Navbar"
 function Home(){
     const [notes, setNotes] = useState([])
     const [title, setTitle] = useState("")
@@ -47,7 +48,8 @@ function Home(){
     }
 
 
-    return <div>
+    return <>
+        <Navbar/>
         <div>
             <h2>Notes</h2>
             {notes.map((note) => (
@@ -78,7 +80,7 @@ function Home(){
             <input type="submit" value="Submit"/>
         </form>
 
-    </div>
+    </>
 }
 
 export default Home
